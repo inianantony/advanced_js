@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Advanced JS Features</title>
+</head>
+<body onload="loadJs()">
+    <div><input type="button" value="This" onclick="" /></div>
+<script>
+    function loadJs() {
+        var files = ["context_of_this"];
+        for (var index in files) {
+            var element = document.createElement('script');
+            element.setAttribute("type", "text/javascript");
+            element.setAttribute("src", `/${files[index]}.js?a=${new Date().getTime()}`);
+            document.getElementsByTagName("head")[0].appendChild(element);
+        }
+    }
+</script>
+</body>
+</html>
