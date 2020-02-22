@@ -1,5 +1,9 @@
 # advanced_js
 project to expalin the advanced concepts of JS
+Credits to 
+```
+Advanced JavaScript by Kyle Simpson
+```
 
 ## Create a Node js project
 
