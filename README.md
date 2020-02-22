@@ -20,7 +20,7 @@ Detailed explanation in https://github.com/inianantony/es6/blob/master/README.md
 
 ### Auto global scope creation
 
-```
+```javascript
 function baz(foo){
 	foo = "bam";
 	bam = "yay";
@@ -28,5 +28,22 @@ function baz(foo){
 ```
 
 In the line `bam = "yay"`, JS will look for `bam` in the function scope of `baz` and the scope manager will give up since it cant find , so JS engine will look for the variable in one scope above which is global scope. And since we look for an LHS ( left hand side) scope lookup the scope manager will create one variable in global scope as `bam` and will pass to us. So when we assign "yay" we are assigning in the global scope. If the lookup was for RHS then it will throw an exception
+
+### Scopes shadow and they dont pollute
+
+```javascript
+var foo = "bar";
+function bar(){
+	var foo = "baz"; // This is local scope of bar and it shadowed the global scope
+
+	function baz(foo){
+		foo = "bam"; // this is the local scope of baz and it shadowed the bar's scope of foo
+		bam = yay";"
+	}
+	baz();
+}
+bar();
+foo; // Since scopes shadow and they dont pollute, the value of foo is stil "bar"
+```
 
 ## Code explanation
