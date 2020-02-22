@@ -1,0 +1,25 @@
+{
+  "name": "advanced_js",
+  "version": "1.0.0",
+  "description": "project to explain the advanced concepts of JS like the closure, lexical scoping, contect of this and more...",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inianantony/advanced_js.git"
+  },
+  "keywords": [
+    "closure",
+    "lexical",
+    "scoping",
+    "this"
+  ],
+  "author": "Antony Inian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inianantony/advanced_js/issues"
+  },
+  "homepage": "https://github.com/inianantony/advanced_js#readme"
+}
