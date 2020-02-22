@@ -14,7 +14,8 @@ Detailed explanation in https://github.com/inianantony/es6/blob/master/README.md
 
 ### Auto global scope creation
 
-```function baz(foo){
+```
+function baz(foo){
 	foo = "bam";
 	bam = "yay";
 }
