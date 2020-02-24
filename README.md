@@ -123,3 +123,7 @@ baz();
 ### IIFE
 
 IIFE pattern is used to create a local scope by executing a piece of code in IIFE and any varaibl inside IIFE is only to that function and it goes out of scope after IIFE is done executing
+
+### Hoisting
+
+finctions are hoised before variables
