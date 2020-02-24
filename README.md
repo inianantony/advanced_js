@@ -49,6 +49,21 @@ foo; // Since scopes shadow and they dont pollute, the value of foo is stil "bar
 
 ### Function definition vs Function expression
 
-if function keyword is the start of the statement then its the function definition, else its function expression
+if function keyword is the start of the statement then its the function definition, else its function expression. Named function expression as shown in the 2nd expample we name our function expression as bar, so we can even reference ourself inside this bar function and also the debugging stck strace shows our name and the code is self documenting
+
+```javascript
+//Anonymous function expression
+
+var foo = function(){
+	//....
+}
+
+//Named function expression
+
+var foo = function bar(){
+	//....
+	// we can reference ourself 'bar' in here
+}
+```
 
 ## Code explanation
