@@ -49,7 +49,7 @@ foo; // Since scopes shadow and they dont pollute, the value of foo is stil "bar
 
 ### Function definition vs Function expression
 
-if function keyword is the start of the statement then its the function definition, else its function expression. Named function expression as shown in the 2nd expample we name our function expression as bar, so we can even reference ourself inside this bar function and also the debugging stck strace shows our name and the code is self documenting
+if function keyword is the start of the statement then its the function definition, else its function expression. Named function expression as shown in the 2nd expample we name our function expression as bar, so we can even reference ourself inside this bar function that is on the own scope of this function even if foo is later overridden in somewhere in code becuase its in the outer scope which the inner function dont have control on it and also the debugging stack strace shows our name and the code is self documenting
 
 ```javascript
 //Anonymous function expression
@@ -66,4 +66,20 @@ var foo = function bar(){
 }
 ```
 
+
+### Lexical scope
+
+The scope's decision is made during the compile time and there is no further change to this scoping decision. If I cant find a variable in my scope then I expand my scope to one leavel up and go on till I reach the global level scope. We can cheat the lexical scoping by 
+
+1. Using eval
+
+```javascript
+var bar = 'bar';
+
+function foo(str){
+	eval(str); // the scope is now altered and bar now has a new local scope
+	console.log(bar); // 42
+}
+foo();
+```
 ## Code explanation
