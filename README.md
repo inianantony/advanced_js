@@ -126,4 +126,4 @@ IIFE pattern is used to create a local scope by executing a piece of code in IIF
 
 ### Hoisting
 
-finctions are hoised before variables
+functions are hoised before variables
