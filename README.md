@@ -46,4 +46,9 @@ bar();
 foo; // Since scopes shadow and they dont pollute, the value of foo is stil "bar"
 ```
 
+
+### Function definition vs Function expression
+
+if function keyword is the start of the statement then its the function definition, else its function expression
+
 ## Code explanation
