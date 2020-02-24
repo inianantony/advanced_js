@@ -71,7 +71,7 @@ var foo = function bar(){
 
 The scope's decision is made during the compile time and there is no further change to this scoping decision. If I cant find a variable in my scope then I expand my scope to one leavel up and go on till I reach the global level scope. We can cheat the lexical scoping by 
 
-1. Using eval
+1. Using `eval`
 
 ```javascript
 var bar = 'bar';
@@ -81,5 +81,29 @@ function foo(str){
 	console.log(bar); // 42
 }
 foo();
+```
+
+2. Using the `with` statement
+
+```javascript
+
+var obj = {
+	a : 2,
+	b : 3,
+	c : 5
+}
+
+// we need to achieve this
+//obj.c = obj.a * obj.b;
+//obj.d = obj.a + obj.b
+
+with(obj){
+	c = a * b;
+	d = a + b
+}
+
+obj.d; // undefined
+d// 5 ; in global scope
+
 ```
 ## Code explanation
