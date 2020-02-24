@@ -67,7 +67,7 @@ var foo = function bar(){
 ```
 
 
-### Lexical scope
+### Lexical scope vs dynamic scoping
 
 The scope's decision is made during the compile time and there is no further change to this scoping decision. If I cant find a variable in my scope then I expand my scope to one leavel up and go on till I reach the global level scope. We can cheat the lexical scoping by 
 
@@ -106,4 +106,20 @@ obj.d; // undefined
 d// 5 ; in global scope
 
 ```
-## Code explanation
+
+for dynamic scoping the whole call stack is traced to find the reference for the variable
+
+```javascript
+function foo(){
+	console.log(bar); // bar becuase the scope checking is traced up based on the call stack
+}
+function baz(){
+	var bar = 'bar';
+	foo();
+}
+baz();
+```
+
+### IIFE
+
+IIFE pattern is used to create a local scope by executing a piece of code in IIFE and any varaibl inside IIFE is only to that function and it goes out of scope after IIFE is done executing
